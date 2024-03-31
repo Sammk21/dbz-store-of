@@ -33,6 +33,7 @@
   }
   h1{
  font-family:  "HumaneBlack", Georgia;
+ line-height: normal;
 }
 .humane{
 font-family:  "HumaneSemBd", Georgia;
@@ -131,3 +132,12 @@ margin-left: 3px;
   font-family: "Satoshi-Black", sans-serif;
 }
 
+.swiper-slide {
+  filter: blur(3px);
+  opacity:0.5;
+}
+
+.swiper-slide-active {
+  filter: blur(0);
+  opacity: 1;
+}
