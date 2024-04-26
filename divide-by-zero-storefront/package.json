@@ -35,6 +35,8 @@
     "@stripe/stripe-js": "^1.29.0",
     "algoliasearch": "^4.20.0",
     "framer-motion": "^11.0.22",
+    "gsap": "^3.12.5",
+    "locomotive-scroll": "^5.0.0-beta.11",
     "lodash": "^4.17.21",
     "medusa-react": "^9.0.0",
     "next": "^14.0.0",
@@ -44,6 +46,7 @@
     "react-icons": "^5.0.1",
     "react-instantsearch-hooks-web": "^6.29.0",
     "react-intersection-observer": "^9.3.4",
+    "react-razorpay": "^2.0.1",
     "swiper": "^11.0.7",
     "tailwindcss-radix": "^2.8.0",
     "webpack": "^5"

@@ -28,10 +28,9 @@ export default function CategoryTemplate({
   if (!category || !countryCode) notFound()
 
   return (
-    <div className="flex flex-col small:flex-row small:items-start py-6 content-container">
-      <RefinementList sortBy={sortBy || "created_at"} />
+    <div className="flex sm:pt-32 pt-20 flex-col  small:items-start py-6 content-container">
       <div className="w-full">
-        <div className="flex flex-row mb-8 text-2xl-semi gap-4">
+        <div className="w-full  text-[12vw] sm:text-[7vw] lg:text-[5vw] font-medium flex-col  ">
           {parents &&
             parents.map((parent) => (
               <span key={parent.id} className="text-ui-fg-subtle">
@@ -41,14 +40,15 @@ export default function CategoryTemplate({
                 >
                   {parent.name}
                 </LocalizedClientLink>
-                /
               </span>
             ))}
-          <h1>{category.name}</h1>
+          <h2>{category.name}</h2>
         </div>
         {category.description && (
-          <div className="mb-8 text-base-regular">
-            <p>{category.description}</p>
+          <div className="mx-auto my-4 flex justify-center flex-col ">
+            <p className="md:w-[40vw] w-[70vw]  text-sm text-gray-700">
+              {category.description}
+            </p>
           </div>
         )}
         {category.category_children && (
@@ -64,6 +64,8 @@ export default function CategoryTemplate({
             </ul>
           </div>
         )}
+        <div className=" border-b"></div>
+        <RefinementList sortBy={sortBy || "created_at"} />
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
             sortBy={sortBy || "created_at"}

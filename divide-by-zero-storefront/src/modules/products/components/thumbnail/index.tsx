@@ -25,7 +25,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   return (
     <Container
       className={clx(
-        "relative w-full overflow-hidden p-4 rounded-large  transition-shadow ease-in-out duration-150 bg-transparent",
+        "relative w-full overflow-hidden p-4 rounded-large shadow-none ease-in-out duration-150 bg-transparent",
         (className = "aspect-[9/16]")
       )}
     >
@@ -42,7 +42,7 @@ const ImageOrPlaceholder = ({
     <Image
       src={image}
       alt="Thumbnail"
-      className="absolute inset-0 object-cover object-center"
+      className="absolute inset-0 object-cover object-center "
       draggable={false}
       quality={50}
       fill

@@ -22,7 +22,7 @@ const ImageSlider = ({ product }) => {
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+        className="mySwiper "
         breakpoints={{
           360: {
             slidesPerView: 1,
@@ -47,7 +47,10 @@ const ImageSlider = ({ product }) => {
                   href={`/products/${product.handle}`}
                   className="group"
                 >
-                  <Thumbnail thumbnail={image?.url} />
+                  <Thumbnail
+                    className="border-none shadow-none"
+                    thumbnail={image?.url}
+                  />
                 </LocalizedClientLink>
               </SwiperSlide>
             </>

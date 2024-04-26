@@ -3,18 +3,18 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 
 const SignInPrompt = () => {
   return (
-    <div className="bg-white flex items-center justify-between">
+    <div className=" flex items-center justify-between">
       <div>
         <Heading level="h2" className="txt-xlarge">
           Already have an account?
         </Heading>
-        <Text className="txt-medium text-ui-fg-subtle mt-2">
+        <Text className="txt-medium  mt-2 textglobal2">
           Sign in for a better experience.
         </Text>
       </div>
       <div>
         <LocalizedClientLink href="/account">
-          <Button variant="secondary" className="h-10">
+          <Button className="w-full h-10 bg-white rounded-full text-black hover:bg-gray-300">
             Sign in
           </Button>
         </LocalizedClientLink>

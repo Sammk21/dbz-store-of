@@ -122,6 +122,7 @@ const StripePaymentButton = ({
   return (
     <>
       <Button
+        className=" h-10 bg-white rounded-full text-black hover:bg-gray-300"
         disabled={disabled || notReady}
         onClick={handlePayment}
         size="large"
@@ -213,6 +214,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
   return (
     <>
       <Button
+        className=" h-10 bg-white rounded-full text-black hover:bg-gray-300"
         disabled={notReady}
         isLoading={submitting}
         onClick={handlePayment}

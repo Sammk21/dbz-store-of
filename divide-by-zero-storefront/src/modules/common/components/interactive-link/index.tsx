@@ -16,7 +16,7 @@ const InteractiveLink = ({
 }: InteractiveLinkProps) => {
   return (
     <LocalizedClientLink
-      className="flex gap-x-1 items-center group text-[2vw]"
+      className="flex gap-x-1 items-center group text-lg"
       href={href}
       onClick={onClick}
       {...props}

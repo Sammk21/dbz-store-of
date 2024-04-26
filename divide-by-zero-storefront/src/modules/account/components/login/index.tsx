@@ -14,12 +14,12 @@ const Login = ({ setCurrentView }: Props) => {
   const [message, formAction] = useFormState(logCustomerIn, null)
 
   return (
-    <div className="max-w-sm w-full flex flex-col items-center">
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-8">
+    <div className="max-w-sm w-full flex flex-col items-center ">
+      <h1 className="text-[6vw] uppercase mb-6">Welcome back</h1>
+      <p className="text-center text-base-regular text-white mb-8">
         Sign in to access an enhanced shopping experience.
       </p>
-      <form className="w-full" action={formAction}>
+      <form className="w-full text-black" action={formAction}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
             label="Email"
@@ -38,9 +38,11 @@ const Login = ({ setCurrentView }: Props) => {
           />
         </div>
         <ErrorMessage error={message} />
-        <SubmitButton className="w-full mt-6">Sign in</SubmitButton>
+        <SubmitButton className="w-full h-10 bg-white rounded-full text-black hover:bg-gray-300 flex justify-between items-center mt-6">
+          Sign in
+        </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
+      <span className="text-center text-small-regular mt-6">
         Not a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}

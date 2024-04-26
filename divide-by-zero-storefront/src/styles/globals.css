@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 @import url("./fontcss/satoshi.css");
 @import url("./fontcss/Humane.css");
+@import url("./fontcss/Dirtyline.css");
 
 @layer utilities {
   /* Chrome, Safari and Opera */
@@ -28,12 +29,32 @@
     @apply left-0;
   }
 
-  body{
-    font-family: 'Satoshi-Regular', sans-serif;
-  }
-  h1{
+
+ body{
+  /* background-color: #F4E0B9 !important; */
+  /* background-color: #191919 !important; */
+  background-color: #EEEDEB !important;
+  box-sizing: border-box;
+  list-style: none;
+
+ }
+ h1{
  font-family:  "HumaneBlack", Georgia;
  line-height: normal;
+ color: #747264;
+}
+h2{
+  color: #3C3633;
+}
+.textglobal{
+ color: #3C3633;
+}
+.textglobal2{
+  color: #747264;
+}
+.buttonbg{
+   background-color: #3C3633;
+   color:white
 }
 .humane{
 font-family:  "HumaneSemBd", Georgia;
@@ -132,12 +153,29 @@ margin-left: 3px;
   font-family: "Satoshi-Black", sans-serif;
 }
 
-.swiper-slide {
+.mySwiper .swiper-slide {
   filter: blur(3px);
   opacity:0.5;
 }
 
-.swiper-slide-active {
+.mySwiper .swiper-slide-active {
   filter: blur(0);
   opacity: 1;
 }
+.swiper-button-disabled{
+  opacity: 0.1;
+  cursor: not-allowed;
+}
+video::-webkit-media-controls {
+  display: none;
+}
+
+/* Only necessary with horizontal scrolling */
+/* html[data-scroll-orientation="horizontal"] {
+    body {
+        width: fit-content;
+    }
+    [data-scroll-container] {
+        display: flex;
+    }
+} */

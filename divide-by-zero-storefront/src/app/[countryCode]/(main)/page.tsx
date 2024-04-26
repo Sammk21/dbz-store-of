@@ -3,12 +3,12 @@ import { Metadata } from "next"
 
 import { getCollectionsList, getProductsList, getRegion } from "@lib/data"
 import FeaturedProducts from "@modules/home/components/featured-products"
-import Hero from "@modules/home/components/hero"
+import Hero from "@modules/home/components/hero/index"
 import AboutUs from "@modules/home/components/about-us/index"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
 import InfiniteText from "@modules/home/components/infinite-text/index"
-import ShowReel from "@modules/home/components/show-reel"
+import LocomotiveScrollContainer from "./locomotive/locomotive"
 
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
@@ -71,17 +71,15 @@ export default async function Home({
 
   return (
     <>
-      <Hero />
-      <div className="py-12">
-        <FeaturedProducts collections={collections} region={region} />
-      </div>
-      <InfiniteText />
-      <div className="py-12">
-        <AboutUs />
-      </div>
-      {/* <div className="py-12">
-        <ShowReel />
-      </div> */}
+      <LocomotiveScrollContainer>
+        <Hero />
+        <div className="py-12">
+          <FeaturedProducts collections={collections} region={region} />
+        </div>
+        <div className="pt-12 pb-4">
+          <InfiniteText />
+        </div>
+      </LocomotiveScrollContainer>
     </>
   )
 }

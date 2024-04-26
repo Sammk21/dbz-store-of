@@ -61,12 +61,12 @@ export default async function RelatedProducts({
   }
 
   return (
-    <div className="product-page-constraint">
+    <div className="px-10 product-page-constraint py-12">
       <div className="flex flex-col items-center text-center mb-16">
-        <span className="text-base-regular text-gray-600 mb-6">
+        <h1 className="font-medium text-white sm:text-[11vw] text-[20vw] uppercase tracking-normal leading-[normal] ">
           Related products
-        </span>
-        <p className="text-2xl-regular text-ui-fg-base max-w-lg">
+        </h1>
+        <p className="text-[3vw] sm:text-[1vw] text-ui-fg-subtle max-w-lg ">
           You might also want to check out these products.
         </p>
       </div>

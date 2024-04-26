@@ -84,8 +84,9 @@ const ShippingAddress = ({
           <AddressSelect addresses={customer.shipping_addresses} cart={cart} />
         </Container>
       )}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 text-white">
         <Input
+          style={{ backgroundColor: "transparent" }}
           label="First name"
           name="shipping_address.first_name"
           autoComplete="given-name"
@@ -94,6 +95,7 @@ const ShippingAddress = ({
           required
         />
         <Input
+          style={{ backgroundColor: "transparent" }}
           label="Last name"
           name="shipping_address.last_name"
           autoComplete="family-name"
@@ -102,6 +104,7 @@ const ShippingAddress = ({
           required
         />
         <Input
+          style={{ backgroundColor: "transparent" }}
           label="Address"
           name="shipping_address.address_1"
           autoComplete="address-line1"
@@ -110,6 +113,7 @@ const ShippingAddress = ({
           required
         />
         <Input
+          style={{ backgroundColor: "transparent" }}
           label="Company"
           name="shipping_address.company"
           value={formData["shipping_address.company"]}
@@ -117,6 +121,7 @@ const ShippingAddress = ({
           autoComplete="organization"
         />
         <Input
+          style={{ backgroundColor: "transparent" }}
           label="Postal code"
           name="shipping_address.postal_code"
           autoComplete="postal-code"
@@ -125,6 +130,7 @@ const ShippingAddress = ({
           required
         />
         <Input
+          style={{ backgroundColor: "transparent" }}
           label="City"
           name="shipping_address.city"
           autoComplete="address-level2"
@@ -133,6 +139,7 @@ const ShippingAddress = ({
           required
         />
         <CountrySelect
+          style={{ backgroundColor: "transparent" }}
           name="shipping_address.country_code"
           autoComplete="country"
           region={cart?.region}
@@ -141,6 +148,7 @@ const ShippingAddress = ({
           required
         />
         <Input
+          style={{ backgroundColor: "transparent" }}
           label="State / Province"
           name="shipping_address.province"
           autoComplete="address-level1"
@@ -158,6 +166,7 @@ const ShippingAddress = ({
       </div>
       <div className="grid grid-cols-2 gap-4 mb-4">
         <Input
+          style={{ backgroundColor: "transparent", color: "white" }}
           label="Email"
           name="email"
           type="email"
@@ -168,6 +177,7 @@ const ShippingAddress = ({
           required
         />
         <Input
+          style={{ backgroundColor: "transparent", color: "white" }}
           label="Phone"
           name="shipping_address.phone"
           autoComplete="tel"

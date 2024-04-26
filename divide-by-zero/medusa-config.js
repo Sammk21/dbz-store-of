@@ -52,6 +52,26 @@ const plugins = [
       },
     },
   },
+
+  {
+    resolve: `medusa-plugin-mailchimp`,
+    options: {
+      api_key: process.env.MAILCHIMP_API_KEY,
+      newsletter_list_id: process.env.MAILCHIMP_NEWSLETTER_LIST_ID,
+    },
+  },
+  {
+    resolve: `medusa-payment-razorpay`,
+    options: {
+      key_id: process.env.RAZORPAY_ID,
+      key_secret: process.env.RAZORPAY_SECRET,
+      razorpay_account: process.env.RAZORPAY_ACCOUNT,
+      automatic_expiry_period: 30, //any value between 12minuts and 30 days expressed in minutes/
+      manual_expiry_period: 20,
+      refund_speed: "normal",
+      webhook_secret: process.env.RAZORPAY_SECRET,
+    },
+  },
 ];
 
 const modules = {

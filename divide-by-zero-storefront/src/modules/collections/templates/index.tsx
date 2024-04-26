@@ -18,14 +18,18 @@ export default function CollectionTemplate({
   countryCode: string
 }) {
   const pageNumber = page ? parseInt(page) : 1
+  const paragraphh =
+    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et aperiam, doloribus quaerat tenetur consectetur, accusantium provident cum sint vero odio, incidunt suscipit obcaecati iusto."
 
   return (
-    <div className="flex flex-col small:flex-row small:items-start py-6 content-container text-white">
-      <RefinementList sortBy={sortBy || "created_at"} />
-      <div className="w-full">
-        <div className="mb-8 text-2xl-semi">
-          <h1>{collection.title}</h1>
+    <div className="flex sm:pt-32 pt-20 flex-col  small:items-start py-6 content-container text-white">
+      <div className="w-full  text-[25vw] sm:text-[15vw] lg:text-[10vw] font-medium flex-col border-b">
+        <div className="w-full flex justify-center h-full items-center">
+          <h1 className="font-medium ">{collection.title}</h1>
         </div>
+      </div>
+      <div className="w-full  ">
+        <RefinementList sortBy={sortBy || "created_at"} />
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
             sortBy={sortBy || "created_at"}

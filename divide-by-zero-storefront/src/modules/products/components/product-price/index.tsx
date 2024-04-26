@@ -29,10 +29,10 @@ export default function ProductPrice({
   }
 
   return (
-    <div className="flex flex-col text-white">
+    <div className="flex flex-col textglobal">
       <span
-        className={clx("text-xl-semi", {
-          "text-white": selectedPrice.price_type === "sale",
+        className={clx("text-[4.5vw] sm:text-[2vw] lg:text-[1.5vw]", {
+          textglobal: selectedPrice.price_type === "sale",
         })}
       >
         {!variant && "From "}

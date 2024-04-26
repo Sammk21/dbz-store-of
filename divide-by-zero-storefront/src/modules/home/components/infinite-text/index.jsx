@@ -13,15 +13,15 @@ const InfiniteText = () => {
 
   return (
     <>
-      <div className="w-full overflow-hidden  relative rotate-3">
+      <div className="w-full overflow-hidden  relative  ">
         <motion.div
           className="flex"
           animate={{
-            // x: ["-100%", "0%"],
+            x: ["-100%", "0%"],
             transition: {
               ease: "linear",
-              duration: 5,
-              //   repeat: Infinity,
+              duration: 10,
+              repeat: Infinity,
             },
           }}
         >
@@ -31,7 +31,7 @@ const InfiniteText = () => {
               className="flex-shrink-0"
               style={{ width: `${100 / slides.length}%` }}
             >
-              <p className="flex text-[4.5vw] text-black bg-white font-extrabold leading-[normal] ">
+              <p className="flex text-[3.3vw] text-[#9c9c9c68] font-bold leading-[normal] uppercase ">
                 {slide.text}
               </p>
             </div>

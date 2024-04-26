@@ -17,6 +17,8 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 
 import Button from "@modules/common/components/button"
 import { Text } from "@medusajs/ui"
+import Divider from "@modules/common/components/divider"
+import Image from "next/image"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -39,30 +41,28 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
   return (
     <>
-      <div className="content-container flex flex-col small:flex-row small:items-start py-6 relative">
-        <div className="w-full sm:h-[80vh]">
+      <div className="px-10 flex flex-col small:flex-row small:items-start py-6  relative">
+        <div className="w-full h-auto ">
           <div className="relative w-full ">
             <ImageSlider product={product} />
-            <div className="sm:w-[30vw] bg-gradient-to-r from-black  w-full sm:absolute h-auto left-0 top-0 sm:h-[80vh] z-10 text-white py-5 ">
-              <div className="flex flex-col h-full justify-between">
+            <div className="ipad:w-[30vw] ipad:bg-gradient-to-r from-[#EEEDEB] h-full  w-full sm:absolute left-0 top-0  z-10 textglobal py-5 ">
+              <div className="flex flex-col h-full w-full ipad:justify-between max-w-md justify-center">
                 <div className="">
                   {product.collection && (
                     <LocalizedClientLink
                       href={`/collections/${product.collection.handle}`}
-                      className="text-medium text-white hover:text-ui-fg-subtle"
+                      className="text-medium textglobal hover:text-ui-fg-subtle underline underline-offset-2 decoration-[0.3px] pb-1"
                     >
                       {product.collection.title}
                     </LocalizedClientLink>
                   )}
-                  <h1 className="sm:text-[19vw] lg:text-[10vw] text-[40vw] uppercase">
+                  <h1 className="sm:text-[14vw] lg:text-[10vw] text-[30vw] uppercase">
                     {product.title}
                   </h1>
-                  <Text className="text-medium text-white">
-                    {product.description}
-                  </Text>
+                  <Text className=" ">{product.description}</Text>
                 </div>
                 <div>
-                  <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
+                  <div className="flex flex-col small:sticky small:top-48 small:py-0  w-full py-8 gap-y-12">
                     <ProductOnboardingCta />
                     <Suspense
                       fallback={
@@ -74,7 +74,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                   </div>
                 </div>
                 <div>
-                  <span className="flex gap-x-2 items-center text-[3vw]">
+                  <span className="flex gap-x-2 items-center sm:text-[2vw] text-[5vw] mb-6">
                     <FaArrowTurnDown />
                     Product Info
                   </span>
@@ -84,28 +84,25 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           </div>
         </div>
       </div>
-      {/* <div className="content-container flex flex-col small:flex-row small:items-start py-6 relative">
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-6">
-          <ProductInfo product={product} />
-          <ProductTabs product={product} />
-        </div>
-        <div className="block w-full relative">
-          <ImageGallery images={product?.images || []} />
-        </div>
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
-          <ProductOnboardingCta />
-          <Suspense
-            fallback={<ProductActions product={product} region={region} />}
-          >
-            <ProductActionsWrapper id={product.id} region={region} />
-          </Suspense>
+      <div className="px-10 sm:py-12">
+        <div className="w-full py-5  rounded-3xl ">
+          <div className="grid ipad:grid-cols-2 gap-3 grid-cols-1">
+            <div>
+              <ProductTabs product={product} />
+            </div>
+            <div className="aspect-square relative">
+              <Image
+                alt={product?.title || "cloth"}
+                fill
+                className="object-cover object-center rounded-3xl "
+                src="https://a.storyblok.com/f/161230/3000x1688/5569ecb6d4/dead-island-2-home.jpg"
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="content-container my-16 small:my-32">
-        <Suspense fallback={<SkeletonRelatedProducts />}>
-          <RelatedProducts product={product} countryCode={countryCode} />
-        </Suspense>
-      </div> */}
+      <Divider />
+      <RelatedProducts product={product} countryCode={countryCode} />
     </>
   )
 }

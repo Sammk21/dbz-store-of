@@ -6,7 +6,7 @@ import "swiper/css"
 import "swiper/css/effect-cards"
 import { IoArrowBack, IoArrowForward } from "react-icons/io5"
 import { useState } from "react"
-import { motion, AnimatePresence, cubicBezier } from "framer-motion"
+import { motion } from "framer-motion"
 
 const slideContent = [
   {

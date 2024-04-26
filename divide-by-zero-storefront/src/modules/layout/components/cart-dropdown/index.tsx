@@ -13,6 +13,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import Thumbnail from "@modules/products/components/thumbnail"
 import { IoBag } from "react-icons/io5"
 import Button from "@modules/common/components/button/index"
+import { BsCart } from "react-icons/bs"
 
 const CartDropdown = ({
   cart: cartState,
@@ -79,11 +80,16 @@ const CartDropdown = ({
     >
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
-          <LocalizedClientLink className="hover:text-[#c5191b]" href="/cart">
-            <span className="flex justify-center items-center">
-              {`Cart [${totalItems}]`}
+          <div className="flex justify-center items-center border text-xs sm:text-sm  border-[#9c9c9c68] rounded-full px-3 textglobal py-2 ">
+            <span className=" mr-2  ">
+              <BsCart />
             </span>
-          </LocalizedClientLink>
+            <LocalizedClientLink className="" href="/cart">
+              <span className="flex justify-center items-center  ">
+                {`Cart (${totalItems})`}
+              </span>
+            </LocalizedClientLink>
+          </div>
         </Popover.Button>
         <Transition
           show={cartDropdownOpen}

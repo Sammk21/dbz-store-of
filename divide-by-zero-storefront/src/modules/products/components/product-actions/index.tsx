@@ -1,20 +1,16 @@
 "use client"
-
 import { Region } from "@medusajs/medusa"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import { Button } from "@medusajs/ui"
 import { isEqual } from "lodash"
 import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
-
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { addToCart } from "@modules/cart/actions"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/option-select"
-
 import MobileActions from "../mobile-actions"
 import ProductPrice from "../product-price"
-import { IoArrowForward } from "react-icons/io5"
 
 type ProductActionsProps = {
   product: PricedProduct
@@ -153,7 +149,7 @@ export default function ProductActions({
           onClick={handleAddToCart}
           disabled={!inStock || !variant}
           variant="primary"
-          className="w-full h-10 bg-white rounded-full text-black hover:bg-gray-300"
+          className="w-full h-10 buttonbg rounded-full hover:bg-stone-800"
           isLoading={isAdding}
         >
           {!variant
